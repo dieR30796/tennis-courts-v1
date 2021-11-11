@@ -1,5 +1,8 @@
 package com.tenniscourts.schedules;
 
+import com.tenniscourts.exceptions.EntityNotFoundException;
+import com.tenniscourts.guests.Guest;
+import com.tenniscourts.util.APIResponseMessages;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -14,22 +17,22 @@ public class ScheduleService {
 
     private final ScheduleMapper scheduleMapper;
 
-    public ScheduleDTO addSchedule(Long tennisCourtId, CreateScheduleRequestDTO createScheduleRequestDTO) {
-        //TODO: implement addSchedule
-        return null;
-    }
-
-    public List<ScheduleDTO> findSchedulesByDates(LocalDateTime startDate, LocalDateTime endDate) {
-        //TODO: implement
-        return null;
-    }
-
-    public ScheduleDTO findSchedule(Long scheduleId) {
-        //TODO: implement
-        return null;
+    public ScheduleDTO findScheduleByID(Long scheduleId) {
+        return scheduleMapper.map(scheduleRepository.findById(scheduleId).<EntityNotFoundException>orElseThrow(() -> {
+            throw new EntityNotFoundException("Schedule " + APIResponseMessages.NOT_FOUND);
+        }));
     }
 
     public List<ScheduleDTO> findSchedulesByTennisCourtId(Long tennisCourtId) {
         return scheduleMapper.map(scheduleRepository.findByTennisCourt_IdOrderByStartDateTime(tennisCourtId));
+    }
+
+    public List<ScheduleDTO> findAllSchedules() {
+        List<Schedule> allSchedules = scheduleRepository.findAll();
+        if (!allSchedules.isEmpty()) {
+            return scheduleMapper.map(allSchedules);
+        } else {
+            throw new EntityNotFoundException("Schedule " + APIResponseMessages.NOT_FOUND);
+        }
     }
 }

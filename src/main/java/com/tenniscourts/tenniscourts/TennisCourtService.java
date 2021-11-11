@@ -1,9 +1,14 @@
 package com.tenniscourts.tenniscourts;
 
 import com.tenniscourts.exceptions.EntityNotFoundException;
+import com.tenniscourts.guests.Guest;
+import com.tenniscourts.guests.GuestDTO;
 import com.tenniscourts.schedules.ScheduleService;
+import com.tenniscourts.util.APIResponseMessages;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @AllArgsConstructor
@@ -19,8 +24,8 @@ public class TennisCourtService {
         return tennisCourtMapper.map(tennisCourtRepository.saveAndFlush(tennisCourtMapper.map(tennisCourt)));
     }
 
-    public TennisCourtDTO findTennisCourtById(Long id) {
-        return tennisCourtRepository.findById(id).map(tennisCourtMapper::map).<EntityNotFoundException>orElseThrow(() -> {
+    public TennisCourtDTO findTennisCourtById(Long tennisCourtId) {
+        return tennisCourtRepository.findById(tennisCourtId).map(tennisCourtMapper::map).<EntityNotFoundException>orElseThrow(() -> {
             throw new EntityNotFoundException("Tennis Court not found.");
         });
     }
@@ -29,5 +34,14 @@ public class TennisCourtService {
         TennisCourtDTO tennisCourtDTO = findTennisCourtById(tennisCourtId);
         tennisCourtDTO.setTennisCourtSchedules(scheduleService.findSchedulesByTennisCourtId(tennisCourtId));
         return tennisCourtDTO;
+    }
+
+    public List<TennisCourtDTO> findAllCourts() {
+        List<TennisCourt> allCourts = tennisCourtRepository.findAll();
+        if (!allCourts.isEmpty()) {
+            return tennisCourtMapper.map(allCourts);
+        } else {
+            throw new EntityNotFoundException("Courts " + APIResponseMessages.NOT_FOUND);
+        }
     }
 }

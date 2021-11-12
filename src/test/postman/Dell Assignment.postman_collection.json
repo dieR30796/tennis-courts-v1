@@ -13,16 +13,44 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": "http://localhost:8080/guest/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"guest",
+								"all"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Add New Guest",
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": "http://localhost:8080/guest/?name=Darren Reid",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"guest",
+								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Darren Reid"
+								}
+							]
+						}
 					},
 					"response": []
 				},
@@ -31,7 +59,24 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": "http://localhost:8080/guest/?name=Darren Reid",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"guest",
+								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Darren Reid"
+								}
+							]
+						}
 					},
 					"response": []
 				},
@@ -40,16 +85,51 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": "http://localhost:8080/guest/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"guest",
+								"1"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Update Guest",
 					"request": {
-						"method": "GET",
+						"method": "PUT",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": "http://localhost:8080/guest?&id=1&name=Jimmy Neutron",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"guest"
+							],
+							"query": [
+								{
+									"key": null,
+									"value": null
+								},
+								{
+									"key": "id",
+									"value": "1"
+								},
+								{
+									"key": "name",
+									"value": "Jimmy Neutron"
+								}
+							]
+						}
 					},
 					"response": []
 				}
@@ -63,7 +143,18 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": "http://localhost:8080/court/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"court",
+								"all"
+							]
+						}
 					},
 					"response": []
 				},
@@ -72,16 +163,44 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": "http://localhost:8080/court/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"court",
+								"1"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Add New Court",
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": "http://localhost:8080/court/?name=Darren Reid Court",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"court",
+								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Darren Reid Court"
+								}
+							]
+						}
 					},
 					"response": []
 				},
@@ -90,7 +209,19 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": "http://localhost:8080/court/scheduled/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"court",
+								"scheduled",
+								"1"
+							]
+						}
 					},
 					"response": []
 				}
@@ -104,7 +235,18 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": "http://localhost:8080/schedule/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"schedule",
+								"all"
+							]
+						}
 					},
 					"response": []
 				},
@@ -113,7 +255,18 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": "http://localhost:8080/schedule/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"schedule",
+								"1"
+							]
+						}
 					},
 					"response": []
 				}
@@ -127,16 +280,48 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": "http://localhost:8080/reservation/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reservation",
+								"all"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Add New Reservation",
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": "http://localhost:8080/reservation/?guestId=2&scheduleId=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reservation",
+								""
+							],
+							"query": [
+								{
+									"key": "guestId",
+									"value": "2"
+								},
+								{
+									"key": "scheduleId",
+									"value": "2"
+								}
+							]
+						}
 					},
 					"response": []
 				},
@@ -145,25 +330,70 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": "http://localhost:8080/reservation/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reservation",
+								"1"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Cancel Reservation",
 					"request": {
-						"method": "GET",
+						"method": "PUT",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": "http://localhost:8080/reservation/cancel/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reservation",
+								"cancel",
+								"1"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Reschedule Reservation",
 					"request": {
-						"method": "GET",
+						"method": "PUT",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": "http://localhost:8080/reservation/reschedule/?reservationId=2&scheduleId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reservation",
+								"reschedule",
+								""
+							],
+							"query": [
+								{
+									"key": "reservationId",
+									"value": "2"
+								},
+								{
+									"key": "scheduleId",
+									"value": "1"
+								}
+							]
+						}
 					},
 					"response": []
 				}
